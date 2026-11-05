@@ -1,0 +1,83 @@
+{
+    "name": "sevaske/taqnyat-api",
+    "description": "Framework-agnostic PHP client for the Taqnyat SMS API (taqnyat.sa): send plain and templated SMS, scheduled messages, PSR-18 compatible.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "taqnyat",
+        "taqnyat.sa",
+        "sms",
+        "saudi arabia",
+        "ksa",
+        "api",
+        "client",
+        "sdk",
+        "psr-18"
+    ],
+    "homepage": "https://github.com/sevaske/taqnyat-api",
+    "support": {
+        "issues": "https://github.com/sevaske/taqnyat-api/issues",
+        "source": "https://github.com/sevaske/taqnyat-api"
+    },
+    "authors": [
+        {
+            "name": "sevaske",
+            "email": "sevachello@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-json": "*",
+        "php-http/discovery": "^1.15",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.0 || ^2.0"
+    },
+    "require-dev": {
+        "nyholm/psr7": "^1.8",
+        "php-http/mock-client": "^1.6",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^9.6"
+    },
+    "suggest": {
+        "guzzlehttp/guzzle": "A popular PSR-18 HTTP client implementation",
+        "symfony/http-client": "A PSR-18 HTTP client implementation (requires nyholm/psr7)"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sevaske\\Taqnyat\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sevaske\\Taqnyat\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse --memory-limit=512M",
+        "pint:install": "@composer --working-dir=tools/pint install --no-interaction",
+        "format": "tools/pint/vendor/bin/pint",
+        "format:check": "tools/pint/vendor/bin/pint --test",
+        "check": [
+            "@analyse",
+            "@test"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts-descriptions": {
+        "test": "Run PHPUnit tests",
+        "analyse": "Run PHPStan static analysis",
+        "pint:install": "Install Laravel Pint into tools/pint (requires PHP 8.3+)",
+        "format": "Format the code with Laravel Pint",
+        "format:check": "Check code style with Laravel Pint without changing files",
+        "check": "Run static analysis and tests"
+    }
+}
