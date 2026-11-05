@@ -5,7 +5,7 @@
 [![PHP Version](https://img.shields.io/packagist/php-v/sevaske/taqnyat-api.svg)](https://packagist.org/packages/sevaske/taqnyat-api)
 [![License](https://img.shields.io/packagist/l/sevaske/taqnyat-api.svg)](LICENSE)
 
-A framework-agnostic PHP client for the [Taqnyat](https://www.taqnyat.sa) SMS API. Covers every endpoint of the public SMS API.
+A framework-agnostic PHP client for the [Taqnyat](https://www.taqnyat.sa) SMS API. Covers every endpoint of the public [SMS API](https://dev.taqnyat.sa/en/doc/sms/).
 
 - Send plain text, templated and scheduled SMS, delete scheduled messages
 - Account balance, sender names and service status
@@ -46,7 +46,9 @@ echo $response->getCost();      // "0.1500"
 echo $response->getCurrency();  // "SAR"
 ```
 
-Get your bearer token in the Taqnyat dashboard ([how to set up a bearer token](https://www.taqnyat.sa/documentation/sms/#setup-bearer)).
+To get a bearer token, log in to your Taqnyat account, open **Developer → Application**, add an application
+with the SMS service enabled and copy its bearer token
+(see [Setup Bearer token](https://dev.taqnyat.sa/en/doc/sms/#setup-bearer) in the official docs).
 
 ## Sending messages
 
